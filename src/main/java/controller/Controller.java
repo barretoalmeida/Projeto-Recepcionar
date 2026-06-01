@@ -2,6 +2,10 @@ package controller;
 
 import java.io.IOException;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -132,6 +136,31 @@ public class Controller extends HttpServlet {
 		 System.out.println("Tipo recebido: " + cursos);
 		
 		response.sendRedirect("index.html");
+	}
+	
+	protected void gerarPdf(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+
+	    response.setContentType("application/pdf");
+	    response.setHeader("Content-Disposition", "attachment; filename=senha.pdf");
+
+	    Document documento = new Document();
+
+	    try {
+	        PdfWriter.getInstance(documento, response.getOutputStream());
+
+	        documento.open();
+
+	        documento.add(new Paragraph("Senha de Atendimento"));
+	        documento.add(new Paragraph("ID: " + cadastro.getId()));
+	        documento.add(new Paragraph("Nome: " + cadastro.getNome()));
+	        documento.add(new Paragraph("Tipo: " + cadastro.getCursos()));
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        documento.close();
+	    }
 	}
 	
 }

@@ -19,6 +19,14 @@
 <body>
 
 	<div class="container tela-cadastro">
+	
+		<div id="loading">
+    		<img src="img/mascotinhomenor.png" alt="Robô">
+    		<p>Gerando...</p>
+    		<div class="barra-container">
+        		<div id="barra"></div>
+    		</div>
+		</div>
 
 		<img id="robo" src="img/mascotinhomenor.png" alt="Robo´">
 
@@ -64,7 +72,7 @@
 				</option>
 			</select>
 
-			<button type="submit" class="btn-entrar">
+			<button type="submit" class="btn-entrar"  onclick="mostrarLoading()">
             	Cadastrar
         	</button>
 

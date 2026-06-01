@@ -21,6 +21,13 @@
 <body>
 
     <div class="container tela-cadastro">
+    	<div id="loading">
+    		<img src="img/mascotinhomenor.png" alt="Robô">
+    		<p>Gerando...</p>
+    		<div class="barra-container">
+        		<div id="barra"></div>
+    		</div>
+		</div>
     
     	
 
@@ -43,7 +50,7 @@
 
         	<input type="date" name="data" placeholder="Data de Nascimento" required>
 
-        	<button type="submit" class="btn-entrar">
+        	<button type="submit" class="btn-entrar"  onclick="mostrarLoading()">
             	Cadastrar
         	</button>
         </form>
