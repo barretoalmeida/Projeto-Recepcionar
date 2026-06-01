@@ -15,6 +15,15 @@
 
 <body>
 
+	<div id="loading">
+    	<img src="img/mascotinhomenor.png" alt="Robô">
+    	<p>Gerando cadastro...</p>
+    	<div class="barra-container">
+        	<div id="barra"></div>
+    	</div>
+	</div>
+
+
     <div class="container tela-bemvindo">
 
         <img id="robo" src="img/mascotinhomenor.png" alt="Robô">
@@ -28,11 +37,11 @@
             </strong>
         </p>
 
-        <a href="insert?tipo=Estudante" type="submit" name="tipo" class="btn">
+        <a href="insert?tipo=Estudante" type="submit" name="tipo" class="btn" onclick="mostrarLoading()">
             🎓 Sou Aluno
         </a>
 
-        <a href="insert?tipo=Visitante" type="submit" name="tipo" class="btn visitante">
+        <a href="insert?tipo=Visitante" type="submit" name="tipo" class="btn visitante" onclick="mostrarLoading()">
             👤 Sou Visitante
         </a>
 

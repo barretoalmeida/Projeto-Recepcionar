@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 
 public class DAO {
 	private String driver = "com.mysql.cj.jdbc.Driver";
-	private String url = "jdbc:mysql://127.0.0.1:3307/recepcionar?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+	private String url = "jdbc:mysql://127.0.0.1:3306/recepcionar?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 	private String user = "root";
-	private String password = "";
+	private String password = "123";
 
 	// Testando a conexão
 	private Connection conectar() {
