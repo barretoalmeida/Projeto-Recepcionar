@@ -2,10 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
-
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -115,19 +111,7 @@ public class Controller extends HttpServlet {
 	    request.setAttribute("data", cadastro.getData());
 	    request.setAttribute("cursos", cadastro.getCursos());
 		
-		String userAgent = request.getHeader("User-Agent");
-
-		boolean celular =
-		    userAgent != null &&
-		    (userAgent.contains("Android")
-		    || userAgent.contains("iPhone")
-		    || userAgent.contains("Mobile"));
-
-		if (celular) {
-		    gerarPdf(request, response);
-		    return;
-		}
-
+		
 		RequestDispatcher rd = request.getRequestDispatcher("cadastrado.jsp");
 		rd.forward(request, response);
 	
@@ -152,36 +136,6 @@ public class Controller extends HttpServlet {
 		response.sendRedirect("index.html");
 	}
 	
-	protected void gerarPdf(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("Entrou no método gerarPdf");
-	    response.setContentType("application/pdf");
-	    response.setHeader("Content-Disposition", "attachment; filename=senha.pdf");
-	    
-	    System.out.println("ID PDF: " + cadastro.getId());
-	    System.out.println("Nome PDF: " + cadastro.getNome());
-	    System.out.println("Curso PDF: " + cadastro.getCursos());
 
-	    Document documento = new Document();
-
-	    try {
-	    	
-	        PdfWriter.getInstance(documento, response.getOutputStream());
-
-	        	documento.open();
-
-	        	documento.add(new Paragraph("TESTE PDF"));
-	        	documento.add(new Paragraph("123456"));
-	        /*documento.add(new Paragraph("Senha de Atendimento"));
-	        documento.add(new Paragraph("ID: " + cadastro.getId()));
-	        documento.add(new Paragraph("Nome: " + cadastro.getNome()));
-	        documento.add(new Paragraph("Tipo: " + cadastro.getCursos()));*/
-
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    } finally {
-	        documento.close();
-	    }
-	}
 	
 }

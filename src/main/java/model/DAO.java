@@ -6,6 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class DAO {
+	/*private String driver = "com.mysql.cj.jdbc.Driver";
+	private String url = "jdbc:mysql://192.168.0.108:3306/recepcionar?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+	private String user = "dba";
+	private String password = "123@senac";*/
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	private String url = "jdbc:mysql://127.0.0.1:3306/recepcionar?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 	private String user = "root";
