@@ -21,6 +21,7 @@
 <body>
 
     <div class="container tela-cadastro">
+    
     	<div id="loading">
     		<img src="img/mascotinhomenor.png" alt="Robô">
     		<p>Gerando...</p>

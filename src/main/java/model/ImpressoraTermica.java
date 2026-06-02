@@ -26,10 +26,6 @@ public class ImpressoraTermica {
             		"====================\n" +
             		"NOME: " + nome + "\n" +
             		"TIPO: " + cursos + "\n" +
-            		"\n" +
-            		"Emitido em:\n" +
-            		//dataHora + "\n" +
-            		"\n" +
             		"====================\n" +
             		"\n" +
             		"✨ BOA SORTE ✨";
